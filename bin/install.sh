@@ -11,8 +11,7 @@ fi;
 
 export $(cat "./.env" | xargs);
 
-execute-job "touch-bash-aliases" && \
-execute-job "append-bash-aliases" && \
-execute-job "link-git-ignore" && \
-execute-job "link-fixtures" && \
-exit 0;
+for JOB_FILEPATH in ./jobs/*.sh; do
+    JOB_NAME="$(basename "${JOB_FILEPATH}" ".sh")"
+    execute-job "${JOB_NAME}" || exit 1;
+done

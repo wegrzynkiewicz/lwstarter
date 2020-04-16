@@ -5,7 +5,7 @@ function touch-file() {
     local FILEPATH=$(realpath "$1");
 
     if [[ -f "${FILEPATH}" ]]; then
-        echo "File (${FILEPATH}) already exists.";
+        echo "File (${FILEPATH}) is already exists.";
         return 2;
     else
         echo "Creating (${FILEPATH}) file...";

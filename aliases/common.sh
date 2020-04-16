@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-qwecd () {
-    cd "${LW_STARTER_PROJECT_DIR}"
+qweenv () {
+    local FILEPATH="${1}"
+    grep --perl-regexp '^#' --invert-match "${FILEPATH}" \
+        | sed '/^$/d' \
+        | sed 's/ *= */=/g' \
+        | xargs
 }
 
-qweenv () {
+qwepenv () {
     printenv | grep "LW_STARTER" --color=never ${@:1}
 }
 
