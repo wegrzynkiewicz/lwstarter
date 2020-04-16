@@ -11,7 +11,9 @@ function execute-job () {
     fi;
 
     echo "${JOB_NAME}: ";
-    (bash "${FILEPATH}" 2>&1; local EXIT_CODE="${?}") | sed "s/^/  /"
+    "${FILEPATH}" | sed "s/^/  /"
+
+    EXIT_CODE="${PIPESTATUS[0]}";
 
     if [[ ${EXIT_CODE} -eq "1" ]]; then
         return 1;

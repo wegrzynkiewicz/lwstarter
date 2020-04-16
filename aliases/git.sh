@@ -37,10 +37,13 @@ qweglo() {
         ${@:1}
 }
 
+qwegph() {
+    git add . && git commit -m "Development" && git push origin master;
+}
+
 qwegrc() {
     git rebase --continue ${@:1}
 }
-
 
 qwegs() {
     git status ${@:1}

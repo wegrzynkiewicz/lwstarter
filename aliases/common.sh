@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+qweenv () {
+    printenv | grep "LW_STARTER" --color=never ${@:1}
+}
+
 qwesd () {
     shutdown -P 0
 }
