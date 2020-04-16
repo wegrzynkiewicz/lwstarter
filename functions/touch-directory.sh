@@ -6,7 +6,7 @@ function touch-directory() {
 
     if [[ -d "${FILEPATH}" ]]; then
         echo "Directory (${FILEPATH}) is already exists.";
-        return 2;
+        return 0;
     else
         echo "Creating (${FILEPATH}) directory...";
         mkdir "${FILEPATH}";
