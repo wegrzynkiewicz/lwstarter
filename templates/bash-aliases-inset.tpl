@@ -1,0 +1,4 @@
+
+if [[ -f ${LW_STARTER_ALIASES_ENTRY_FILEPATH} ]]; then
+    source ${LW_STARTER_ALIASES_ENTRY_FILEPATH}
+fi;
