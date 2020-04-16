@@ -13,4 +13,6 @@ export $(cat "./.env" | xargs);
 
 execute-job "touch-bash-aliases" && \
 execute-job "append-bash-aliases" && \
-execute-job "link-git-ignore"
+execute-job "link-git-ignore" && \
+execute-job "link-fixtures" && \
+exit 0;

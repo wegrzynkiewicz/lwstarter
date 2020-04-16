@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+qwecd () {
+    cd "${LW_STARTER_PROJECT_DIR}"
+}
+
 qweenv () {
     printenv | grep "LW_STARTER" --color=never ${@:1}
 }

@@ -7,7 +7,7 @@ function execute-job () {
 
     if [[ ! -f "${FILEPATH}" ]]; then
         echo "Task named (${JOB_NAME}) not exists... Abort.";
-        return1;
+        return 1;
     fi;
 
     echo "${JOB_NAME}: ";
@@ -15,9 +15,9 @@ function execute-job () {
 
     EXIT_CODE="${PIPESTATUS[0]}";
 
+    echo '';
+
     if [[ ${EXIT_CODE} -eq "1" ]]; then
         return 1;
     fi;
-
-    echo '';
 }
