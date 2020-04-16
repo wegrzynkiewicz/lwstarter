@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-qwecd () {
-    qwepstcd "${@:1}"
-}
-
 qwepstcd () {
 
     local TARGET_NAME="${1}";
