@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 qwecd () {
-    qwpstcd ${@}
+    qwepstcd ${@}
 }
 
 qwecda () {
