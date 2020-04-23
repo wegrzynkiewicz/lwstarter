@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+qwecd () {
+    qwpstcd ${@}
+}
+
+qwecda () {
+    qwepsta ${@}
+}
+
 qwepstcd () {
 
     local TARGET_NAME="${1}";
