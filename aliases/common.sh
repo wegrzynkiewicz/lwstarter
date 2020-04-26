@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+qwectp () {
+    cut -d '|' -f 2
+}
+
 qweenv () {
     local FILEPATH="${1}"
     grep --perl-regexp '^#' --invert-match "${FILEPATH}" \
