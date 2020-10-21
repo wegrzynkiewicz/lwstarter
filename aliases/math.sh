@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
-qweh2d () {
+qwe-hexadecimal-to-decimal () {
    echo "obase=10; ibase=16; ${@:1}" | bc
 }
 
-qweh2b () {
+qwe-hexadecimal-to-binary () {
    echo "obase=2; ibase=16; ${@:1}" | bc
 }
 
-qweb2d () {
+qwe-binary-to-decimal () {
    echo "obase=10; ibase=2; ${@:1}" | bc
 }
 
-qweb2h () {
+qwe-binary-to-hexadecimal () {
    echo "obase=16; ibase=2; ${@:1}" | bc
 }
 
-qwed2h () {
+qwe-decimal-to-hexadecimal () {
    echo "obase=16; ibase=10; ${@:1}" | bc
 }
 
-qwed2b () {
+qwe-decimal-to-binary () {
    echo "obase=2; ibase=10; ${@:1}" | bc
 }
 

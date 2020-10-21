@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-qwedcd () {
+qwe-docker-compose-down () {
     docker-compose down ${@:1}
 }
 
-qwedcup () {
+qwe-docker-compose-up () {
     docker-compose up --build --force-recreate ${@:1}
 }

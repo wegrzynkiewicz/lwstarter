@@ -5,7 +5,7 @@ source "./common/bootstrap.sh"
 FILENAME="$(realpath ~/.bash_aliases)";
 
 touch-file "${FILENAME}" || exit 2;
-grep "LW_STARTER_INSTALLED" "${FILENAME}" > /dev/null;
+grep "lwstarter" "${FILENAME}" > /dev/null;
 EXIT_CODE="${?}"
 
 if [[ "${EXIT_CODE}" -eq "0" ]]; then

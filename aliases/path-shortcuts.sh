@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 
-qwecd () {
-    qwepstcd ${@}
-}
-
-qwecda () {
-    qwepsta ${@}
-}
-
-qwepstcd () {
+qwe-shortcuts-change-directory () {
 
     local TARGET_NAME="${1}";
     if [[ ! "${TARGET_NAME}" ]]; then
@@ -16,13 +8,12 @@ qwepstcd () {
         return 0;
     fi;
 
-    local PATH_SHORTCUTS_FILENAME="${LW_STARTER_CONFIG_DIR}/path-shortcuts";
-    if [[ ! -f "${PATH_SHORTCUTS_FILENAME}" ]]; then
+    if [[ ! -f "${LW_STARTER_SHORTCUTS_FILE}" ]]; then
         echo "Cannot find file with shortcuts.";
         return 1;
     fi;
 
-    local RESULT=$(grep --perl-regexp "^${TARGET_NAME}:" "${PATH_SHORTCUTS_FILENAME}");
+    local RESULT=$(grep --perl-regexp "^${TARGET_NAME}:" "${LW_STARTER_SHORTCUTS_FILE}");
 
     if [[ -z "${RESULT}" ]]; then
         echo "Not found shortcut... Abort.";
@@ -40,7 +31,7 @@ qwepstcd () {
     cd "${PATH}";
 }
 
-qwepsta() {
+qwe-shortcuts-add-directory() {
 
     local TARGET_NAME="${1}";
     if [[ ! "${TARGET_NAME}" ]]; then
@@ -48,8 +39,7 @@ qwepsta() {
         return 1;
     fi;
 
-    local PATH_SHORTCUTS_FILENAME="${LW_STARTER_CONFIG_DIR}/path-shortcuts";
-    if [[ ! -f "${PATH_SHORTCUTS_FILENAME}" ]]; then
+    if [[ ! -f "${LW_STARTER_SHORTCUTS_FILE}" ]]; then
         echo "Cannot find file with shortcuts.";
         return 1;
     fi;
@@ -57,6 +47,10 @@ qwepsta() {
     local PATH=$(pwd);
     local LINE="${TARGET_NAME}:${PATH}";
 
-    echo "${LINE}" >> "${PATH_SHORTCUTS_FILENAME}";
-    echo "Saved shortcut as (${PATH})";
+    echo "${LINE}" >> "${LW_STARTER_SHORTCUTS_FILE}";
+    echo "Saved shortcut (${TARGET_NAME}) as (${PATH})";
+}
+
+qwe-shortcuts-edit() {
+    vim "${LW_STARTER_SHORTCUTS_FILE}"
 }
