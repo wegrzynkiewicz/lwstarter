@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for COMMON_FILEPATH in ./functions/*.sh; do
+for COMMON_FILEPATH in ${LW_STARTER_PROJECT_DIR}/functions/*.sh; do
     source "${COMMON_FILEPATH}"
 done
 
