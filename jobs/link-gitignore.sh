@@ -2,18 +2,7 @@
 
 source "./common/bootstrap.sh"
 
-FILENAME="$(realpath ~/.gitignore)";
+TARGET="$(realpath --no-symlinks ./entries/.gitignore)";
+FILENAME="$(realpath --no-symlinks ~/.gitignore)";
 
-if [[ -f "${FILENAME}" ]]; then
-    INODES_COUNT=$(stat --printf '%h' "${FILENAME}")
-    if [[ "${INODES_COUNT}" -gt "1" ]]; then
-        echo "Hardlink (${FILENAME}) is already linked.";
-        exit 2;
-    fi;
-    echo "File (${FILENAME}) is not valid hardlink."
-    echo "Removing (${FILENAME}) file...";
-    rm "${FILENAME}";
-fi;
-
-echo "Creating (${FILENAME}) hardlink...";
-ln "./entries/.gitignore" "${FILENAME}";
+make-symlink ${TARGET} ${FILENAME}

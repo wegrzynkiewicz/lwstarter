@@ -18,11 +18,12 @@ function make-symlink() {
     fi;
 
     if [[ -f "${FILENAME}" ]] || [[ -d "${FILENAME}" ]]; then
-        echo "Source (${FILENAME}) already exists. Abort.";
-        exit 1;
-    else
-        echo "Creating (${FILENAME}) symlink...";
-        ln --symbolic --relative  "${TARGET}" "${FILENAME}"
-        exit 0;
+        echo "Source (${FILENAME}) already exists.";
+        echo "Removing files (${FILENAME})...";
+        rm -R "${FILENAME}";
     fi;
+
+    echo "Creating (${FILENAME}) symlink...";
+    ln --symbolic --relative  "${TARGET}" "${FILENAME}"
+    exit 0;
 }

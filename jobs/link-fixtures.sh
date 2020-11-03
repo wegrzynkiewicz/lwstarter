@@ -2,7 +2,7 @@
 
 source "./common/bootstrap.sh"
 
-TARGET="${LW_STARTER_PROJECT_DIR}/entries/fixtures";
+TARGET="$(realpath --no-symlinks ./entries/fixtures)";
 FILENAME="$(realpath --no-symlinks ~/fixtures)";
 
 make-symlink "${TARGET}" "${FILENAME}"

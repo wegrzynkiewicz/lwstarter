@@ -1,0 +1,35 @@
+[alias]
+
+    a = add
+    aa = add .
+
+    b = branch
+    bd = branch -D
+
+    c = commit
+    ca = commit --amend
+    cd = commit -m "Development"
+
+    co = checkout
+
+    cfl = config --list
+    cfgl = config --global --list
+    cfll = config --local --list
+
+    df = diff HEAD~1
+    dfn = diff --name-only HEAD~1
+
+    la = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all
+    lg = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all -20
+    lo = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order
+
+    ra = rebase --abort
+    rc = rebase --continue
+    ro = rebase --onto
+
+    s = status
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    filemode = true

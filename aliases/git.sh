@@ -1,50 +1,23 @@
 #!/usr/bin/env bash
 
-qwe-git-add-all() {
-    git add . ${@:1}
-}
-
-qwe-git-log-all() {
-    git log \
-        --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
-        --abbrev-commit \
-        --graph \
-        --color \
-        --date-order \
-        --all \
-         ${@:1}
-}
-
-qwe-git-log-global() {
-    git log \
-        --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
-        --abbrev-commit \
-        --graph \
-        --color \
-        --date-order \
-        --all \
-        -20 \
-        ${@:1}
-}
-
-qwe-git-log-only() {
-    git log \
-        --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
-        --abbrev-commit \
-        --graph \
-        --color \
-        --date-order \
-        ${@:1}
-}
-
-qwe-git-push() {
+qwe-git-push-fast() {
     git add . && git commit -m "Development" && git push origin master;
 }
 
-qwe-git-rebase-continue() {
-    git rebase --continue ${@:1}
+qwe-git-push-slow() {
+    local BRANCH="${1}"
+    local MESSAGE="${2}"
+    git add . && git commit -m "${MESSAGE}" && git push origin "${BRANCH}";
 }
 
-qwe-git-status() {
-    git status ${@:1}
+qwe-git-push-amend() {
+    local BRANCH="${1}"
+    local MESSAGE="${2}"
+    git add . && git commit -m --amend "${MESSAGE}" && git push origin "${BRANCH}" -f;
+}
+
+qwe-git-config-user() {
+    local EMAIL="${1}";
+    git config --local --replace-all user.name "${LW_STARTER_USER_FIRSTNAME} ${LW_STARTER_USER_SURNAME}"
+    git config --local --replace-all user.email "${EMAIL}"
 }
