@@ -4,3 +4,4 @@
 lwc:${LW_STARTER_CONFIG_DIR}
 lwp:${LW_STARTER_PROJECT_DIR}
 lwf:${LW_STARTER_PROJECT_DIR}/entries/fixtures
+ssh:~/.ssh/
