@@ -11,6 +11,7 @@
     cd = commit -m "Development"
 
     co = checkout
+    coa = checkout HEAD .
 
     cfl = config --list
     cfgl = config --global --list
