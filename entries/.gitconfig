@@ -29,8 +29,9 @@
     lg = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all -20
     lo = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order
 
-    pm = push origin master
-    pmf = push origin master -f
+    pfo = push -f origin
+    pfom = push -f origin master
+    pom = push origin master
 
     ra = rebase --abort
     rc = rebase --continue
