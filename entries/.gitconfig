@@ -12,7 +12,8 @@
 
     co = checkout
     coa = checkout HEAD .
-    com = checkout -B master origin/master
+    cob = checkout origin/master -B
+    com = checkout origin/master -B master
 
     cfl = config --list
     cfgl = config --global --list
