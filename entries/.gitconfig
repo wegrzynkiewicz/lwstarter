@@ -19,7 +19,8 @@
     cfgl = config --global --list
     cfll = config --local --list
 
-    df = diff HEAD~1
+    df = diff HEAD
+    df1 = diff HEAD~1
     dfn = diff --name-only HEAD~1
 
     fa = fetch --all --prune
