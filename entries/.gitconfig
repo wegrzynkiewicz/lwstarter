@@ -8,10 +8,11 @@
 
     c = commit
     ca = commit --amend
-    cd = commit -m "Development"
+    cd = commit --message "Development"
 
     co = checkout
     coa = checkout HEAD .
+    com = checkout -B master origin/master
 
     cfl = config --list
     cfgl = config --global --list
@@ -19,6 +20,8 @@
 
     df = diff HEAD~1
     dfn = diff --name-only HEAD~1
+
+    fa = fetch --all --prune
 
     la = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all
     lg = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all -20
