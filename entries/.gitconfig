@@ -10,18 +10,18 @@
     ca = commit --amend
     cd = commit --message "Development"
 
-    co = checkout
-    coa = checkout HEAD .
-    cob = checkout origin/master -B
-    com = checkout origin/master -B master
+    ch = checkout
+    cha = checkout HEAD .
+    chb = checkout origin/master -B
+    chbm = checkout origin/master -B master
 
-    cfl = config --list
+    cfal = config --list
     cfgl = config --global --list
     cfll = config --local --list
 
     df = diff HEAD
     df1 = diff HEAD~1
-    dfn = diff --name-only HEAD~1
+    df1n = diff --name-only HEAD~1
 
     fa = fetch --all --prune
 
@@ -36,6 +36,7 @@
     ra = rebase --abort
     rc = rebase --continue
     ro = rebase --onto
+    rom = rebase origin/master
 
     s = status
 

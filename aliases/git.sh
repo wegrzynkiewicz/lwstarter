@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-qwe-git-push-fast() {
-    git add . && git commit -m "Development" && git push origin master;
-}
-
-qwe-git-push-slow() {
+qwe-git-push() {
     local BRANCH="${1}"
     local MESSAGE="${2}"
     git add . && git commit -m "${MESSAGE}" && git push origin "${BRANCH}";
+}
+
+qwe-git-push-fast() {
+    git add . && git commit -m "Development" && git push origin master;
 }
 
 qwe-git-push-amend() {

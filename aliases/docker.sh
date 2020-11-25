@@ -19,3 +19,8 @@ qwe-docker-print-all () {
 qwe-docker-browse-tags () {
     wget -q https://registry.hub.docker.com/v1/repositories/${1}/tags -O - | jq .[].name -r
 }
+
+qwe-docker-network-gateway-address () {
+    local NETWORK=$1
+    docker network inspect "${NETWORK}" --format='{{( index .IPAM.Config 0).Gateway}}'
+}
