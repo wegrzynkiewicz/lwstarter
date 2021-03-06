@@ -6,3 +6,5 @@ alias qwe-cda="qwe-shortcuts-add-directory"
 alias qwe-sd="qwe-shutdown"
 alias qwe-xci="qwe-xclip-input"
 alias qwe-xco="qwe-xclip-output"
+alias qwe-kp="qwe-kubernetes-get-pods"
+
