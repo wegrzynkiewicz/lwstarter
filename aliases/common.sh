@@ -23,3 +23,20 @@ qwe-xclip-input () {
 qwe-xclip-output () {
     xclip -o -selection clipboard ${@:1}
 }
+
+qwe-rclone-gdrive () {
+    /usr/bin/rclone \
+        copy \
+        --update \
+        --verbose \
+        --transfers 30 \
+        --checkers 8 \
+        --contimeout 60s \
+        --timeout 300s \
+        --retries 3 \
+        --low-level-retries 10 \
+        --stats 1s \
+        --drive-acknowledge-abuse \
+        "gdrive:/" \
+        "/home/lukasz/gdrive"
+}
