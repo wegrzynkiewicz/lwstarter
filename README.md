@@ -1,5 +1,0 @@
-## Installation
-
-```bash
-make install
-```
