@@ -3,8 +3,9 @@
     la = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all
     lg = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all -20
     s = status
-
 [core]
     editor = vim
     excludesfile = ~/.gitignore
     filemode = true
+[status]
+	submodulesummary = 1
