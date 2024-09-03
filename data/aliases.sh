@@ -77,3 +77,31 @@ qwe-ssh-keygen() {
   local COMMENT="${2}"
   ssh-keygen -t rsa -b 4096 -f "${FILENAME}" -C "${COMMENT}"
 }
+
+qwe-rclone-gdrive() {
+  # Sync Google Drive with local directory
+  /usr/bin/rclone \
+    copy \
+    --update \
+    --verbose \
+    --transfers 30 \
+    --checkers 8 \
+    --contimeout 60s \
+    --timeout 300s \
+    --retries 3 \
+    --low-level-retries 10 \
+    --stats 1s \
+    --drive-acknowledge-abuse \
+    "gdrive:/" \
+    "/home/lukasz/gdrive"
+}
+
+qwe-rclone-ovh() {
+  # Push local directory to OVH Object Storage
+  rclone \
+    copy \
+    --update \
+    --verbose \
+    ~/gdrive/ \
+    s3:/gdrive-backups
+}
