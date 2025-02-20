@@ -92,8 +92,8 @@ qwe-rclone-gdrive() {
     --low-level-retries 10 \
     --stats 1s \
     --drive-acknowledge-abuse \
-    "gdrive:/" \
-    "/home/lukasz/gdrive"
+    gdrive:/ \
+    ~/gdrive
 }
 
 qwe-rclone-ovh() {
