@@ -1,7 +1,7 @@
 [alias]
     fa = fetch --all --prune
-    lo = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order
-    la = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph --color --date-order --all
+    lo = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --graph --color --date-order
+    la = log --pretty=format:'%C(green)%h %C(reset)-%C(auto)%d %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit --graph --color --date-order --all
     s = status
 [core]
     editor = vim
@@ -9,3 +9,15 @@
     filemode = true
 [status]
 	submodulesummary = 1
+[init]
+	defaultBranch = main
+[user]
+	email = 
+	name = Łukasz Węgrzynkiewicz
+[color]
+	ui = auto
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
